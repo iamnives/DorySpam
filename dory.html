@@ -1,13 +1,44 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script type="text/javascript" src="dory.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dory Example</title>
 </head>
 <body>
-    <title>DORY</title>
+    <div id="content"></div>
+
+    <script>
+        window.onload = function init() {
+
+            // Load and play the first audio (loop)
+            let myAudio5 = new Audio('dory.ogg');
+            myAudio5.loop = true; // Use loop instead of the 'ended' event to repeat
+            myAudio5.play().catch((error) => {
+                console.log('Autoplay failed:', error);
+            });
+
+            // Load and play the second audio (loop)
+            let myAudio4 = new Audio('enva.mp3');
+            myAudio4.loop = true; // Use loop to repeat the audio
+            myAudio4.volume = 1.0; // Set volume to maximum (0.0 to 1.0)
+            myAudio4.play().catch((error) => {
+                console.log('Autoplay failed:', error);
+            });
+
+            // Start rendering the text
+            render();
+        }
+
+        function render() {
+            let contentDiv = document.getElementById('content');
+            let newText = "I SUFFER FROM SHORT TERM MEMORY LOSS!!!! ";
+
+            // Append the text every 100 milliseconds
+            setInterval(function() {
+                contentDiv.innerHTML += newText;
+            }, 500); // Change 100 to a different value to adjust the speed
+        }
+    </script>
 </body>
 </html>
-
-
-
