@@ -7,27 +7,37 @@
 </head>
 <body>
     <div id="content"></div>
+    <button id="startButton">Dory?</button>
 
     <script>
         window.onload = function init() {
+            // Select the button element
+            const startButton = document.getElementById('startButton');
 
-            // Load and play the first audio (loop)
-            let myAudio5 = new Audio('dory.ogg');
-            myAudio5.loop = true; // Use loop instead of the 'ended' event to repeat
-            myAudio5.play().catch((error) => {
-                console.log('Autoplay failed:', error);
+            // Add a click event listener to the button
+            startButton.addEventListener('click', function() {
+
+                // Hide the button after it's clicked
+                startButton.style.display = 'none';
+
+                // Load and play the first audio (loop)
+                let myAudio5 = new Audio('dory.ogg');
+                myAudio5.loop = true; // Use loop instead of the 'ended' event to repeat
+                myAudio5.play().catch((error) => {
+                    console.log('Autoplay failed:', error);
+                });
+
+                // Load and play the second audio (loop)
+                let myAudio4 = new Audio('enva.mp3');
+                myAudio4.loop = true; // Use loop to repeat the audio
+                myAudio4.volume = 1.0; // Set volume to maximum (0.0 to 1.0)
+                myAudio4.play().catch((error) => {
+                    console.log('Autoplay failed:', error);
+                });
+
+                // Start rendering the text
+                render();
             });
-
-            // Load and play the second audio (loop)
-            let myAudio4 = new Audio('enva.mp3');
-            myAudio4.loop = true; // Use loop to repeat the audio
-            myAudio4.volume = 1.0; // Set volume to maximum (0.0 to 1.0)
-            myAudio4.play().catch((error) => {
-                console.log('Autoplay failed:', error);
-            });
-
-            // Start rendering the text
-            render();
         }
 
         function render() {
@@ -37,7 +47,7 @@
             // Append the text every 100 milliseconds
             setInterval(function() {
                 contentDiv.innerHTML += newText;
-            }, 500); // Change 100 to a different value to adjust the speed
+            }, 100); // Change 100 to a different value to adjust the speed
         }
     </script>
 </body>
