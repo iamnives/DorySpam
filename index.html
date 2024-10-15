@@ -39,8 +39,8 @@
     </style>
 </head>
 <body>
-    <div class="center-container">
-      <button id="startButton">Start</button>
+    <div class="center-container" id="centerContainer">
+      <button id="startButton">Dory?</button>
     </div>
 
     <div id="content"></div>
@@ -48,8 +48,8 @@
 
     <script>
         window.onload = function init() {
-            // Select the button element
-            const startButton = document.getElementById('startButton');
+            // Hide the entire container after it's clicked
+                centerContainer.style.display = 'none';
 
             // Add a click event listener to the button
             startButton.addEventListener('click', function() {
