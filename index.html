@@ -4,10 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DorySpam ! hi im dory</title>
+   <style>
+        /* Style for centering the button */
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Flex container to center content */
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        /* Styling for a bigger button */
+        #startButton {
+            padding: 20px 50px; /* Increase padding for bigger button */
+            font-size: 30px;    /* Increase font size */
+            cursor: pointer;
+            border-radius: 10px; /* Optional: round the corners */
+            background-color: #4CAF50; /* Optional: button background color */
+            color: white;       /* Optional: text color */
+            border: none;       /* Remove border */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: add a shadow for a 3D effect */
+            transition: transform 0.2s ease; /* Optional: smooth scaling effect */
+        }
+
+        /* Optional: Add hover effect to scale the button */
+        #startButton:hover {
+            transform: scale(1.1); /* Slightly enlarge the button on hover */
+        }
+    </style>
 </head>
 <body>
+    <div class="center-container">
+      <button id="startButton">Start</button>
+    </div>
+
     <div id="content"></div>
-    <button id="startButton">Dory?</button>
+   
 
     <script>
         window.onload = function init() {
