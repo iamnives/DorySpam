@@ -48,14 +48,15 @@
 
     <script>
         window.onload = function init() {
-            // Hide the entire container after it's clicked
-                centerContainer.style.display = 'none';
+            // Select the button and container elements
+            const startButton = document.getElementById('startButton');
+            const centerContainer = document.getElementById('centerContainer');
 
             // Add a click event listener to the button
             startButton.addEventListener('click', function() {
 
-                // Hide the button after it's clicked
-                startButton.style.display = 'none';
+                // Hide the entire container after it's clicked
+                centerContainer.style.display = 'none';
 
                 // Load and play the first audio (loop)
                 let myAudio5 = new Audio('dory.ogg');
